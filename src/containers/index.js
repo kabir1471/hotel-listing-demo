@@ -1,4 +1,4 @@
-import HotelDetail from './HotelDetail';
-import HotelListing from './HotelListing';
+import HotelDetailScreen from './HotelDetail/HotelDetailView';
+import HotelListingScreen from './HotelListing/HotelListingView';
 
-export {HotelDetail, HotelListing};
+export {HotelDetailScreen, HotelListingScreen};
