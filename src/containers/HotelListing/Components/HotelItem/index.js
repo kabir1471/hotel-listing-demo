@@ -5,6 +5,8 @@ import StarRating from 'react-native-star-rating';
 import {COLORS, FONT_SIZES} from '../../../../utills/constants';
 import Icon from 'react-native-vector-icons/Entypo';
 import FontAwsome5 from 'react-native-vector-icons/FontAwesome5';
+import Rating from '../../../Components/Rating';
+import HotelImage from '../../../Components/HotelImage';
 
 const HotelCard = props => {
   const {hotel, onHotelCardPress} = props;
@@ -13,7 +15,7 @@ const HotelCard = props => {
       style={hotelCardStyles.container}
       onPress={() => onHotelCardPress(hotel)}>
       <View style={hotelCardStyles.imageContainer}>
-        <Image source={{uri: hotel.gallery[0]}} style={hotelCardStyles.image} />
+        <HotelImage imageLink={hotel.gallery[0]} />
       </View>
       <View style={hotelCardStyles.content}>
         <Text style={hotelCardStyles.cardTitle} numberOfLines={1}>
@@ -49,18 +51,7 @@ const HotelCard = props => {
             {'per night'}
           </Text>
         </View>
-        <View style={hotelCardStyles.ratingContainer}>
-          <StarRating
-            disabled={false}
-            maxStars={5}
-            fullStarColor={COLORS.SECONDARY}
-            emptyStarColor={COLORS.SECONDARY}
-            starSize={10}
-            containerStyle={{justifyContent: 'flex-start'}}
-            rating={hotel.userRating}
-          />
-          <Text style={hotelCardStyles.ratingText}>{hotel.userRating}</Text>
-        </View>
+        <Rating userRating={hotel.userRating} />
       </View>
       <View style={hotelCardStyles.iconContainer}></View>
     </TouchableOpacity>

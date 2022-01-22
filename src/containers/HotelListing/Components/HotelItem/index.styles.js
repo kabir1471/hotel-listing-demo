@@ -28,7 +28,6 @@ export const hotelCardStyles = StyleSheet.create({
     flexDirection: 'row',
   },
   imageContainer: {height: '100%', flex: 0.4},
-  image: {height: '100%', width: '100%', borderRadius: SIZES.BORDER_RADIUS},
   content: {
     flex: 0.5,
     padding: PADDINGS.PADDING_SMALL,
@@ -47,11 +46,7 @@ export const hotelCardStyles = StyleSheet.create({
     color: COLORS.LIGHT_TEXT,
     marginLeft: PADDINGS.PADDING_HORIZANTAL_XS,
   },
-  ratingContainer: {flexDirection: 'row', alignItems: 'center'},
-  ratingText: {
-    color: COLORS.SECONDARY,
-    marginLeft: PADDINGS.PADDING_HORIZANTAL_XS,
-  },
+
   iconContainer: {
     flex: 0.1,
   },

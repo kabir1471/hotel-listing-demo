@@ -11,6 +11,7 @@ export const useHotelListing = () => {
   }, []);
 
   const getHotels = () => {
+    setLoading(true);
     getAllHotels()
       .then(res => {
         setHotels(res);

@@ -1,3 +1,3 @@
-import {getAllHotels} from './requests';
+import {getAllHotels, checkImageUrl} from './requests';
 
-export {getAllHotels};
+export {getAllHotels, checkImageUrl};

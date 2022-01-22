@@ -11,3 +11,19 @@ export const getAllHotels = async () => {
     throw error;
   }
 };
+
+export const checkImageUrl = (image, setImage) => {
+  fetch(image)
+    .then(res => {
+      if (res.status == 404) {
+        setImage(
+          'https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png',
+        );
+      }
+    })
+    .catch(err => {
+      setImage(
+        'https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png',
+      );
+    });
+};

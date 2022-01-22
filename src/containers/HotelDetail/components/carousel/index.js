@@ -25,10 +25,12 @@ const BackgroundCarousel = props => {
           prev.selectedIndex === images.length - 1 ? 0 : prev.selectedIndex + 1,
       }));
     }, 3000);
+
     return (cleanup = () => {
       clearInterval();
     });
   }, []);
+
   useEffect(() => {
     {
       scrollRef.current.scrollTo({
