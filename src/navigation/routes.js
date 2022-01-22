@@ -1,4 +1,0 @@
-export const ROUTES = {
-  HOTEL_LISTING: 'HOTEL_LISTING',
-  HOTEL_DETAIL: 'HOTEL_DETAIL',
-};

@@ -1,10 +1,15 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import BackgroundCarousel from './components/carousel';
+import {hotelDetailStyles} from './index.styles';
 
-const HotelDetailScreen = () => {
+const HotelDetailScreen = ({route, navigation}) => {
+  const hotel = route.params;
+  console.log('dasjkbfdkjsa ', hotel);
   return (
-    <View>
-      <Text></Text>
+    <View style={hotelDetailStyles.container}>
+      <BackgroundCarousel images={hotel.gallery} />
+      <View style={hotelDetailStyles.content}></View>
     </View>
   );
 };
