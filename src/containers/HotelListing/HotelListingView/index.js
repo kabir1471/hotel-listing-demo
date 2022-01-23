@@ -11,21 +11,13 @@ import Filter from '../Components/Filter';
 
 const HotelListingScreen = ({navigation}) => {
   const {hotels, error, loading} = useHotelListing();
-  const [modal, setModal] = useState(false);
 
   const handleHotelCardPress = hotel =>
     navigation.navigate(ROUTES.DETAIL, hotel);
 
-  const handleFilterClick = () => setModal(true);
-
-  const handleCloseModal = () => setModal(false);
-
-  console.log(loading);
-
   return (
     <SafeAreaView style={listingStyles.container}>
-      {modal && <Filter closeModal={handleCloseModal} />}
-      <Topbar onFilterClick={handleFilterClick} />
+      <Topbar />
       {loading ? (
         <FlatList
           data={[1, 2, 3, 4, 5]}
@@ -42,6 +34,7 @@ const HotelListingScreen = ({navigation}) => {
           )}
         />
       )}
+      {error && <Text>{'Some error Occured'}</Text>}
     </SafeAreaView>
   );
 };

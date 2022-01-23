@@ -14,6 +14,7 @@ export const useHotelListing = () => {
     setLoading(true);
     getAllHotels()
       .then(res => {
+        res.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
         setHotels(res);
       })
       .catch(err => {
@@ -22,23 +23,9 @@ export const useHotelListing = () => {
       .finally(() => setLoading(false));
   };
 
-  const sortDescending = () => {
-    setLoading(true);
-    let tempHotels = [...hotels];
-    tempHotels.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-    setHotels(tempHotels);
-  };
-
-  const sortAscending = () => {
-    setLoading(true);
-    console.log('object');
-  };
-
   return {
     hotels,
     loading,
     error,
-    sortDescending,
-    sortAscending,
   };
 };
