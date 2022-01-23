@@ -17,7 +17,7 @@ export const buttonStyles = StyleSheet.create({
     paddingHorizontal: PADDINGS.PADDING_MEDIUM,
   },
   buttonText: {
-    fontSize: FONT_SIZES.TITLE,
+    fontSize: FONT_SIZES.SUB_TITLE,
     fontWeight: '500',
     color: COLORS.WHITE,
   },

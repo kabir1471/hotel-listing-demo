@@ -5,9 +5,11 @@ import {COLORS, FONT_SIZES, SIZES} from '../../../../utills/constants';
 import Button from '../../../Components/Button';
 import {modalStyles} from './index.styles';
 import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useHotelListing} from '../..';
 
 const Filter = props => {
   const {closeModal} = props;
+  const {sortAscending, sortDescending} = useHotelListing();
   return (
     <View>
       <Modal isVisible={true} onBackdropPress={closeModal}>
@@ -16,7 +18,10 @@ const Filter = props => {
           <View style={modalStyles.buttonCOntainer}>
             <Button
               color={COLORS.LIGHT_TEXT}
-              onPress={() => console.log('jdhskajhdka')}
+              onPress={() => {
+                closeModal();
+                sortDescending();
+              }}
               Icon={
                 <MIcon
                   size={FONT_SIZES.TITLE}
@@ -28,7 +33,10 @@ const Filter = props => {
             />
             <Button
               color={COLORS.PRIMARY}
-              onPress={() => console.log('jdhskajhdka')}
+              onPress={() => {
+                closeModal();
+                sortAscending();
+              }}
               Icon={
                 <MIcon
                   color={COLORS.WHITE}

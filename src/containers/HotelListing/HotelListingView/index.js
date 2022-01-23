@@ -20,6 +20,8 @@ const HotelListingScreen = ({navigation}) => {
 
   const handleCloseModal = () => setModal(false);
 
+  console.log(loading);
+
   return (
     <SafeAreaView style={listingStyles.container}>
       {modal && <Filter closeModal={handleCloseModal} />}

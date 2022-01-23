@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Image,
+  Linking,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -18,6 +19,11 @@ const HotelDetailScreen = ({route, navigation}) => {
   const hotel = route.params;
   console.log('dasjkbfdkjsa ', hotel);
   const handleNavigate = () => navigation.goBack();
+  const openMap = async () => {
+    Linking.openURL(
+      `https://www.google.com/maps/dir/?api=1&destination=${hotel.location.latitude},${hotel.location.longitude}&dir_action=navigate`,
+    );
+  };
   return (
     <View style={hotelDetailStyles.container}>
       <TouchableOpacity
@@ -30,7 +36,7 @@ const HotelDetailScreen = ({route, navigation}) => {
         />
       </TouchableOpacity>
       <BackgroundCarousel images={hotel.gallery} />
-      <Detail hotel={hotel} />
+      <Detail hotel={hotel} openMap={openMap} />
     </View>
   );
 };
