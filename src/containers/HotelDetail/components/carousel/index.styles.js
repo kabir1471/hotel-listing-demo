@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import {COLORS} from '../../../../utills/constants';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 
@@ -23,21 +24,6 @@ export const carouselStyles = StyleSheet.create({
     height: 10,
     borderRadius: 5,
     margin: 8,
-    backgroundColor: '#fff',
-  },
-  button: {
-    position: 'absolute',
-    bottom: 50,
-    backgroundColor: '#fff',
-    alignSelf: 'center',
-    width: '50%',
-    height: 50,
-    borderRadius: 50 / 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    fontSize: 17,
-    fontWeight: '500',
+    backgroundColor: COLORS.PRIMARY,
   },
 });

@@ -10,6 +10,7 @@ export const topbarStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingHorizontal: PADDINGS.PADDING_SMALL,
   },
   title: {
     fontSize: FONT_SIZES.TITLE,

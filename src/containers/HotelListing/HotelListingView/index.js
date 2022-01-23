@@ -1,5 +1,5 @@
-import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {FlatList, StyleSheet} from 'react-native';
 import {useHotelListing} from '..';
 import {listingStyles} from './index.styles';
 import Topbar from '../Components/Topbar';
@@ -7,18 +7,23 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import HotelCard from '../Components/HotelItem';
 import {ROUTES} from '../../../utills/routes';
 import Shimmer from '../Components/Shimmer';
+import Filter from '../Components/Filter';
 
 const HotelListingScreen = ({navigation}) => {
   const {hotels, error, loading} = useHotelListing();
+  const [modal, setModal] = useState(false);
 
   const handleHotelCardPress = hotel =>
     navigation.navigate(ROUTES.DETAIL, hotel);
 
-  console.log(loading);
+  const handleFilterClick = () => setModal(true);
+
+  const handleCloseModal = () => setModal(false);
 
   return (
     <SafeAreaView style={listingStyles.container}>
-      <Topbar />
+      {modal && <Filter closeModal={handleCloseModal} />}
+      <Topbar onFilterClick={handleFilterClick} />
       {loading ? (
         <FlatList
           data={[1, 2, 3, 4, 5]}

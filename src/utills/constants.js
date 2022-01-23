@@ -20,6 +20,7 @@ export const FONT_SIZES = {
 export const SIZES = {
   CARD_HEIGHT: 150,
   BORDER_RADIUS: hp('1%'),
+  DETAILS_CONTAINER: hp('55%'),
 };
 
 export const PADDINGS = {

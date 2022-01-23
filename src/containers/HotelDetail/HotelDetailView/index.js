@@ -12,6 +12,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {COLORS, FONT_SIZES} from '../../../utills/constants';
 import Rating from '../../Components/Rating';
 import BackgroundCarousel from '../components/carousel';
+import Detail from '../components/Details';
 
 const HotelDetailScreen = ({route, navigation}) => {
   const hotel = route.params;
@@ -29,15 +30,7 @@ const HotelDetailScreen = ({route, navigation}) => {
         />
       </TouchableOpacity>
       <BackgroundCarousel images={hotel.gallery} />
-      <View style={hotelDetailStyles.content}>
-        <View>
-          <View>
-            <Text>{hotel.name}</Text>
-            <Rating userRating={hotel.userRating} />
-          </View>
-          <View></View>
-        </View>
-      </View>
+      <Detail hotel={hotel} />
     </View>
   );
 };

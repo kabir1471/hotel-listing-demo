@@ -8,6 +8,7 @@ import {
   Text,
   Platform,
 } from 'react-native';
+import HotelImage from '../../../Components/HotelImage';
 import {carouselStyles as styles} from './index.styles';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
@@ -57,11 +58,9 @@ const BackgroundCarousel = props => {
         onMomentumScrollEnd={setSelectedIndex}
         ref={scrollRef}>
         {images.map((image, index) => (
-          <Image
-            key={image}
-            source={{uri: image}}
-            style={styles.backgroundImage}
-          />
+          <View style={styles.backgroundImage} key={image}>
+            <HotelImage imageLink={image} />
+          </View>
         ))}
       </ScrollView>
       <View style={styles.circleDiv}>

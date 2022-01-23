@@ -15,12 +15,4 @@ export const hotelDetailStyles = StyleSheet.create({
     height: 50,
     zIndex: 1000,
   },
-  content: {
-    height: hp('55%'),
-    backgroundColor: COLORS.WHITE,
-    marginTop: hp('-5%'),
-    borderTopEndRadius: hp('4%'),
-    borderTopStartRadius: hp('4%'),
-    paddingHorizontal: wp('4%'),
-  },
 });
